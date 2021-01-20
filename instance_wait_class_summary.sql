@@ -1,0 +1,8 @@
+ select 
+ wait_class,
+ total_waits,
+ TOTAL_WAITS_FG,
+ (TOTAL_WAITS-TOTAL_WAITS_FG) as TOTAL_WAITS_BG,
+ TIME_WAITED_FG 
+ from V$SYSTEM_WAIT_CLASS 
+ order by TIME_WAITED_FG;
